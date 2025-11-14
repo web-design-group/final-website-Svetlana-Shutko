@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEAMKEYSTORE</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 1920px;
+            height: 2849px;
+            background: linear-gradient(to bottom, #FFFFFF, #DCE3F1);
+            font-family: Arial, sans-serif;
+            overflow-y: auto;
+            position: relative;
+        }
+        .header {
+            width: 1920px;
+            height: 72px;
+            background: linear-gradient(to right, #000310, #00071B, #000823);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .header-menu {
+            position: absolute;
+            left: 280px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .header-logo {
+            position: absolute;
+            left: 360px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .header-profile {
+            position: absolute;
+            right: 280px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .header-cart {
+            position: absolute;
+            right: 420px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .header-cart-link {
+            position: absolute;
+            right: 460px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 15px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .header-cart-link:hover {
+            color: #6183CF;
+            text-decoration: underline;
+        }
+        .header-menu img,
+        .header-logo img,
+        .header-profile img,
+        .header-cart img {
+            width: 30px;
+            height: 30px;
+        }
+        .header-logo img {
+            width: 60px;
+            height: 30px;
+            transform: scale(2.1);
+            display: block;
+        }
+        .header-link {
+            position: absolute;
+            right: 320px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 15px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .header-link:hover {
+            color: #6183CF;
+            text-decoration: underline;
+        }
+        .main-content {
+            margin-top: 72px;
+            min-height: calc(100vh - 72px - 223px);
+        }
+        .content-container {
+            width: 1362px;
+            height: 2849px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 0 auto;
+        }
+        .knopka_katalog {
+            width: 1362px;
+            height: 550px;
+            background-image: url('баннер.jpg');
+            background-size: cover;
+            background-position: center;
+            margin-top: 0px;
+            position: relative;
+        }
+        .catalog-button {
+            position: absolute;
+            left: 544px;
+            top: 435px;
+            width: 275px;
+            height: 65px;
+            background-color: #9AFA46;
+            color: black;
+            font-size: 22px;
+            font-weight: bold;
+            border: none;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .catalog-button:hover {
+            background-color: #C0FF89;
+        }
+        .gallery {
+            width: 1362px;
+            height: 181px;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 288px;
+            height: 162px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+        .uslugi {
+            width: 1362px;
+            height: 442px;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 147px;
+        }
+        .uslugi h2 {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 55px;
+        }
+        .uslugi img {
+            width: 215px;
+            height: 215px;
+            border-radius: 50px;
+            margin-bottom: 10px;
+        }
+        .uslugi p {
+            font-size: 22px;
+            font-weight: 500;
+        }
+        .garantii {
+            width: 1362px;
+            height: 400px;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 150px;
+        }
+        .garantii h2 {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 55px;
+        }
+        .garantii img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .instruction {
+            width: 1362px;
+            height: 320px;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 150px;
+        }
+        .instruction h2 {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 60px;
+        }
+        .instruction img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .instruction img {
+            transform: scale(1.2);
+            display: block;
+        }
+        .footer {
+            width: 1920px;
+            height: 223px;
+            background: linear-gradient(to right, #000310, #00071B, #000823);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            position: absolute;
+            top: 2626px;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-menu">
+            <img src="меню.svg" alt="Меню">
+        </div>
+        <div class="header-logo">
+            <img src="логотип1.svg" alt="Логотип">
+        </div>
+        <div class="header-profile">
+            <img src="профиль.svg" alt="Профиль">
+        </div>
+        <a href="https://www.google.com" class="header-link">Профиль</a>
+        <div class="header-cart">
+            <img src="корзина.svg" alt="Корзина">
+        </div>
+        <a href="https://www.google.com" class="header-cart-link">Корзина</a>
+    </div>
+    <div class="main-content">
+        <div class="content-container">
+            <div class="knopka_katalog">
+                <button class="catalog-button">Перейти к каталогу</button>
+            </div>
+            <div class="gallery">
+                <img src="1.jpeg" alt="Балдурс Гейт 3">
+                <img src="2.png" alt="Элден Ринг">
+                <img src="3.jpeg" alt="Скорн">
+                <img src="4.jpg" alt="РЕПО">
+            </div>
+            <div class="uslugi">
+                <h2>Какие услуги предлагает STAMKEYSTORE</h2>
+                <img src="Стим.jpg" alt="Услуги">
+                <p>Здесь вы быстро, безопасно и по выгодным ценам приобретете лицензии на любимые игры</p>
+            </div>
+            <div class="garantii">
+                <h2>STAMKEYSTORE гарантирует</h2>
+                <img src="гарантии.png" alt="Гарантии">
+            </div>
+            <div class="instruction">
+                <h2>Как осуществляется покупка</h2>
+                <img src="Инструкция.png" alt="Инструкция">
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <!-- элементы футера -->
+    </div>
+</body>
+</html>
